@@ -118,6 +118,12 @@ body {
   border-radius: 10px;
 }
 
+#container .controls #removeall {
+  background-color: #c0392b;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
 #container .mycheck {
   opacity: 1;
   border-radius: 10px;
