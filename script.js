@@ -7,12 +7,50 @@ addButton.addEventListener('click', addItem);
 var removeButton = document.getElementById('remove')
 removeButton.addEventListener('click', removeItem)
 
-var removeAllButton = document.getElementById('removeall')
-removeAllButton.addEventListener('click', removeAll)
+// var removeAllButton = document.getElementById('removeall')
+// removeAllButton.addEventListener('click', removeAll)
 
 function addItem() {
-  console.log('Add btn clicked');
+  var input = document.getElementById('input');
+  var newItem = input.value
+  ul = document.getElementById('list');
+  var textnode = document.createTextNode(newItem)
 
+  if (newItem === '') {
+    return false;
+    // const errMsg = document.createElement('p')
+    // errMsg.textContent = 'Please enter the ToDo item'
+
+    // input.appendChild(input)
+  }
+
+  else {
+    //create li
+    li = document.createElement('li');
+
+    //create check box
+    var checkBox = document.createElement('input')
+    checkBox.type = 'checkbox';
+    checkBox.setAttribute('id', 'check');
+
+    //create label
+    var label = document.createElement('label');
+    label.setAttribute('for', 'item')
+
+    //Add these elements on Webpage
+    ul.appendChild(label);
+    li.appendChild(checkBox);
+    label.appendChild(textnode);
+    li.appendChild(label);
+
+    ul.insertBefore(li, ul.childNodes[0]);
+
+    setTimeout(() => {
+      li.className = 'visual';
+    }, 1);
+
+    input.value = '';
+  }
 }
 
 function removeItem() {
@@ -25,17 +63,17 @@ function removeItem() {
   }
 }
 
-function removeAll() {
-  li = ul.children
+// function removeAll() {
+//   li = ul.children
 
-  // console.log(li);
+//   // console.log(li);
 
-  for (let i = 0; i < li.length; i++) {
-    //console.log(li[i]);
-    ul.remove(li[i])
-  }
+//   for (let i = 0; i < li.length; i++) {
+//     //console.log(li[i]);
+//     li.remove(li[i])
+//   }
 
-}
+//}
 
 
 
