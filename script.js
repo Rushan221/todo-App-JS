@@ -34,6 +34,7 @@ function removeAll() {
     //console.log(li[i]);
     ul.remove(li[i])
   }
+
 }
 
 
