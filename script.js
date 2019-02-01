@@ -22,19 +22,19 @@ function removeItem() {
     while (li[index] && li[index].children[0].checked) {
       ul.removeChild(li[index])
     }
-
   }
-
-
 }
 
 function removeAll() {
   li = ul.children
 
-  for (let index = 0; index < li.length; index++) {
-    while (li[index] || li[index].children[0].checked) {
-      ul.removeChild(li[index])
-    }
+  // console.log(li);
 
+  for (let i = 0; i < li.length; i++) {
+    //console.log(li[i]);
+    ul.remove(li[i])
   }
 }
+
+
+
